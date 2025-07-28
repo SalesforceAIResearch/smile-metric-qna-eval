@@ -1,0 +1,11 @@
+numpy
+scikit-learn
+nltk
+tqdm
+transformers
+openai
+requests
+sentence-transformers
+huggingface-hub
+bert-score
+rouge-score
