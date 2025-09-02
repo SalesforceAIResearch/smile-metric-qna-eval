@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 Alternatively, you can also install using pip:
 ```bash
-pip install smile <check once>
+pip install git+https://github.com/SalesforceAIResearch/smile-metric-qna-eval.git
 ```
 
 ## Usage
