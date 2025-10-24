@@ -4,6 +4,7 @@ import bert_score
 import numpy as np
 from tqdm import tqdm
 from rouge_score import rouge_scorer
+import os
 
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -15,7 +16,7 @@ from nltk.tokenize import word_tokenize
 nltk.download('punkt_tab')
 nltk.download('wordnet')
 
-def compute_rouge_score(metrics:list=['rougeL'], pred_col='pred', sub_metrics=['fmeasure'], ref_data=None):
+def compute_rouge_score(metrics:list=['rougeL'], pred_col='pred', sub_metrics=['fmeasure'], ref_data=None, ans_idx:int=1):
     """
     Computes ROUGE scores between reference and candidate sentences.
 
@@ -24,14 +25,15 @@ def compute_rouge_score(metrics:list=['rougeL'], pred_col='pred', sub_metrics=['
         pred_col (str): Name of the prediction column (default: 'pred').
         sub_metrics (list): List of sub-metrics to extract (e.g., ['fmeasure']).
         ref_data (list): List of data samples, each containing answer and prediction.
+        ans_idx (int): Index of the answer to use (1 for actual answer, 2 for synthetic answer).
 
     Returns:
         dict: Dictionary of ROUGE scores for each metric and sub-metric.
     """
     ans, preds = [], []
     for data in ref_data:
-        # index - 1 is the 'answer', last index is the prediction
-        ans.append(data[1])
+        # index - ans_idx is the answer, last index is the prediction
+        ans.append(str(data[ans_idx]))
         preds.append(data[-1])
 
     # Initialize ROUGE scorer
@@ -49,20 +51,21 @@ def compute_rouge_score(metrics:list=['rougeL'], pred_col='pred', sub_metrics=['
     
     return rouge_rslts
 
-def compute_bert_score(inp_data, pred_col='pred'):
+def compute_bert_score(inp_data, pred_col='pred', ans_idx:int=1):
     """
     Computes BERTScore precision, recall, and F1 between reference and prediction strings.
 
     Parameters:
         inp_data (list): List of data samples, each containing answer and prediction.
         pred_col (str): Name of the prediction column (default: 'pred').
+        ans_idx (int): Index of the answer to use (1 for actual answer, 2 for synthetic answer).
 
     Returns:
         dict: Dictionary with BERTScore precision ('P'), recall ('R'), and F1 ('F1') lists.
     """
     # Extract ans & pred
     # index-1 is the 'answer', last index is the prediction
-    ans = [str(data[1]) for data in inp_data]
+    ans = [str(data[ans_idx]) for data in inp_data]
     pred = [str(data[-1]) for data in inp_data]
     
     bert_p, bert_r, bert_f1 = bert_score.score(pred, ans, lang='en')
@@ -75,18 +78,19 @@ def compute_bert_score(inp_data, pred_col='pred'):
 
     return bert_result
 
-def compute_meteor_score(inp_data, pred_col='pred'):
+def compute_meteor_score(inp_data, pred_col='pred', ans_idx:int=1):
     """
     Calculates the METEOR score between a reference and prediction text.
 
     Args:
         inp_data (list): List of data samples, each containing answer and prediction.
         pred_col (str): Name of the prediction column (default: 'pred').
+        ans_idx (int): Index of the answer to use (1 for actual answer, 2 for synthetic answer).
 
     Returns:
         dict: Dictionary with METEOR scores ('meteor').
     """
-    ans = [str(data[1]) for data in inp_data]
+    ans = [str(data[ans_idx]) for data in inp_data]
     preds = [str(data[-1]) for data in inp_data]
 
     result = {'meteor':[]}
@@ -97,18 +101,19 @@ def compute_meteor_score(inp_data, pred_col='pred'):
     
     return result
 
-def compute_exact_match(inp_data, pred_col='pred'):
+def compute_exact_match(inp_data, pred_col='pred', ans_idx:int=1):
     """
     Computes the exact match(after lowercasing) between reference and prediction strings.
 
     Parameters:
         inp_data (list): List of data samples, each containing answer and prediction.
         pred_col (str): Name of the prediction column (default: 'pred').
+        ans_idx (int): Index of the answer to use (1 for actual answer, 2 for synthetic answer).
 
     Returns:
         dict: Dictionary with exact match results ('exact_match'), 1 if exact match, else 0.
     """
-    ans = [str(data[1]) for data in inp_data]
+    ans = [str(data[ans_idx]) for data in inp_data]
     preds = [str(data[-1]) for data in inp_data]
 
     result = {'exact_match':[]}
@@ -119,17 +124,18 @@ def compute_exact_match(inp_data, pred_col='pred'):
     
     return result
 
-def compute_sbert_score(inp_data):
+def compute_sbert_score(inp_data, ans_idx:int=1):
     """
     Computes cosine similarity between sentence embeddings of reference and prediction strings using SBERT.
 
     Parameters:
         inp_data (list): List of data samples, each containing answer and prediction.
+        ans_idx (int): Index of the answer to use (1 for actual answer, 2 for synthetic answer).
 
     Returns:
         np.ndarray: Array of cosine similarity scores for each sample.
     """
-    ans = [str(data[1]) for data in inp_data]
+    ans = [str(data[ans_idx]) for data in inp_data]
     preds = [str(data[-1]) for data in inp_data]
 
     # Initialise sbert
@@ -142,6 +148,106 @@ def compute_sbert_score(inp_data):
     sims = np.diagonal(cosine_similarity(ans_embs, pred_embs))
 
     return sims
+
+def compute_bleurt_score(inp_data, ans_idx=1, checkpoint='BLEURT-20'):
+    """
+    Computes BLEURT scores between reference and prediction strings using Google's learned metric.
+
+    Parameters:
+        inp_data (list): List of data samples, each containing answer and prediction.
+        ans_idx (int): Index of the answer to use (1 for actual answer, 2 for synthetic answer).
+        checkpoint (str): BLEURT checkpoint to use (default: 'BLEURT-20'). 
+                         Options: 'BLEURT-20', 'BLEURT-20-D12', 'BLEURT-20-D6' (smaller, faster).
+
+    Returns:
+        dict: Dictionary with 'scores' key containing list of BLEURT scores for each sample.
+    """
+    from evaluate import load
+    
+    ans = [str(data[ans_idx]) for data in inp_data]
+    preds = [str(data[-1]) for data in inp_data]
+
+    # Initialize BLEURT scorer
+    # Using the evaluate library (from Hugging Face)
+    bleurt = load('bleurt', checkpoint)
+    
+    # Compute scores in batches for efficiency
+    scores = []
+    batch_size = 32  # Process in batches to avoid memory issues
+    
+    for i in tqdm(range(0, len(ans), batch_size), desc="Computing BLEURT"):
+        batch_refs = ans[i:i+batch_size]
+        batch_preds = preds[i:i+batch_size]
+        batch_scores = bleurt.compute(predictions=batch_preds, references=batch_refs)
+        scores.extend(batch_scores['scores'])
+    
+    return {'scores': scores}
+
+def compute_moverscore(inp_data, ans_idx=1, model='distilbert-base-uncased', n_gram=2, device='cuda'):
+    """
+    Computes MoverScore between reference and prediction strings using contextualized embeddings and Word Mover's Distance.
+    
+    Based on Zhao et al. (EMNLP 2019), recommended configuration for QA tasks:
+    - model: 'bert-base-uncased' or BERT fine-tuned on MNLI for best correlation with human judgments
+    - n_gram: 2 (bigrams) - captures phrase-level context and word order, shown to outperform unigrams
+    - For QA evaluation, bigrams are particularly effective as they capture multi-word answer phrases
+
+    Parameters:
+        inp_data (list): List of data samples, each containing answer and prediction.
+        ans_idx (int): Index of the answer to use (1 for actual answer, 2 for synthetic answer).
+        model (str): Model to use for embeddings (default: 'distilbert-base-uncased').
+                    Recommended for QA: 'bert-base-uncased' (best quality, slower) or 
+                    'distilbert-base-uncased' (faster, slightly lower quality).
+                    Paper's best: BERT fine-tuned on MNLI dataset.
+                    Other options: 'roberta-base', 'roberta-large', 'albert-base-v2'.
+        n_gram (int): N-gram level for matching (default: 2).
+                     1 = unigrams (individual words)
+                     2 = bigrams (word pairs, recommended for QA - captures phrases like "New York")
+                     3 = trigrams (better for longer contexts)
+        device (str): Device to use for computation (default: 'cuda').
+
+    Returns:
+        dict: Dictionary with 'scores' key containing list of MoverScore values for each sample.
+        
+    References:
+        Zhao et al. (2019). MoverScore: Text Generation Evaluating with Contextualized 
+        Embeddings and Earth Mover Distance. EMNLP 2019.
+        Paper findings: n_gram=2 with BERT-MNLI achieved highest correlation with human judgments.
+    """
+    try:
+        from moverscore_v2 import get_idf_dict, word_mover_score
+    except ImportError:
+        raise ImportError(
+            "MoverScore not found. Please install it using:\n"
+            "pip install -U git+https://github.com/AIPHES/emnlp19-moverscore.git"
+        )
+    
+    # Set the model via environment variable (MoverScore's way of selecting models)
+    os.environ['MOVERSCORE_MODEL'] = model
+    
+    ans = [str(data[ans_idx]) for data in inp_data]
+    preds = [str(data[-1]) for data in inp_data]
+
+    # Compute IDF dictionary for references (used for weighting)
+    idf_dict_ref = get_idf_dict(ans)
+    idf_dict_hyp = get_idf_dict(preds)
+    
+    # Compute MoverScore
+    # The function returns scores for each reference-hypothesis pair
+    # n_gram=2 recommended by paper for better correlation with human judgments in QA tasks
+    scores = word_mover_score(
+        ans, 
+        preds, 
+        idf_dict_ref, 
+        idf_dict_hyp,
+        stop_words=[], 
+        n_gram=n_gram, 
+        remove_subwords=True,
+        batch_size=32,
+        device=device
+    )
+    
+    return {'scores': scores}
 
 def time_exec(start_time, end_time, title):
     """

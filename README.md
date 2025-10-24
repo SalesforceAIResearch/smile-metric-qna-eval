@@ -13,6 +13,8 @@ Clone this repository and install the dependencies:
 ```bash
 git clone git@github.com:SalesforceAIResearch/smile-metric-qna-eval.git
 cd smile-metric-qna-eval
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -46,10 +48,22 @@ The input data for the evaluation script should in in JSON or JSONL format. Each
 
 ```python
 from smile.smile import SMILE
+import sys
 
-# Example: evaluating a list of predictions against references
-predictions = ["The cat sat on the mat.", "A quick brown fox jumps over the lazy dog."]
-references = ["A cat is sitting on the mat.", "The quick brown fox jumps over a lazy dog."]
+# Ensure we can import from pyscripts even when running from repo root
+sys.path.append(str(Path(__file__).resolve().parent / "pyscripts"))
+from generate_scores import load_data
+
+# Example: evaluating a list of predictions against references - using the above input data format
+input_path = "sample_data/sample_input.json"
+args = SimpleNamespace(
+        input_file=str(input_path),
+        pred_file=None, # to be used if predictions are present in a separate file
+        use_ans=False,
+    )
+
+proc_data = load_data(args)
+
 # metrics to be computed - avg(average), hm(harmonic mean)
 eval_metrics = ['avg', 'hm']
 smile_obj = SMILE(emb_model = 'ember-v1',

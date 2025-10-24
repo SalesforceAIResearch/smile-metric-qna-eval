@@ -5,7 +5,7 @@ import numpy as np
 import time
 import pickle as pkl
 from smile.smile import SMILE
-from utils import compute_rouge_score, compute_bert_score, compute_meteor_score, compute_exact_match, compute_sbert_score
+from utils import compute_rouge_score, compute_bert_score, compute_meteor_score, compute_exact_match, compute_sbert_score, compute_bleurt_score, compute_moverscore
 import sys
 from tqdm import tqdm
 sys.path.append('..')
@@ -23,7 +23,7 @@ def parse_arguments():
     parser.add_argument('--input_file', type=str, required=True, help='Path to the input file.')
     parser.add_argument('--pred_file', type=str, help="Path to the prediction file(useful when you don't have syn_ans in same file).")
     parser.add_argument('--output_file', type=str, required=True, help='Path to the output file.')
-    parser.add_argument('--eval_mode', choices=['smile', 'rouge', 'bert_score', 'meteor', 'exact_match', 'sbert'], default='smile', help='Which scores to generate.')
+    parser.add_argument('--eval_mode', choices=['smile', 'rouge', 'bert_score', 'meteor', 'exact_match', 'sbert', 'bleurt', 'moverscore'], default='smile', help='Which scores to generate.')
     parser.add_argument("--timeit", action="store_true", help="Enable timing of the code execution.")
     parser.add_argument("--emb_model", default="ember-v1", type=str, help="Embedding model to use with SMILE.")
     parser.add_argument("--save_emb_folder", type=str, help="Saves the embedding from a specified folder, generates 4 files i.e. <dataset>/<syn and model>/syn_ans_emb.npy, <dataset>/<pred model>/pred_sent_emb.npy, <dataset>/ans_kwd_emb.npy & <dataset>/<pred model>pred_kwd_emb.npy.")
@@ -149,6 +149,9 @@ def main():
     print('1. Loading input files in specific format')
     proc_data = load_data(args)
 
+    # Use index 1 for actual answer if use_ans is True, else use index 2 for synthetic answer
+    ans_idx = 1 if args.use_ans else 2
+
     # Load smile object and perform the evaluation
     # Generate smile scores
     if args.eval_mode == 'smile':
@@ -207,7 +210,7 @@ def main():
         start_time = time.time()
         # Hardcoding rouge parameters
         # Change values here
-        results = compute_rouge_score(metrics=['rougeL'], pred_col='pred', sub_metrics=['fmeasure'],ref_data=proc_data)
+        results = compute_rouge_score(metrics=['rougeL'], pred_col='pred', sub_metrics=['fmeasure'],ref_data=proc_data, ans_idx=ans_idx)
         end_time = time.time()
         if args.timeit: 
             elapsed_time = end_time - start_time
@@ -217,7 +220,7 @@ def main():
         print('2. Loading BERT Scorer')
         print('3. Generate BERT score')
         start_time = time.time()
-        results = compute_bert_score(inp_data=proc_data, pred_col='pred')
+        results = compute_bert_score(inp_data=proc_data, pred_col='pred', ans_idx=ans_idx)
         end_time = time.time()
         if args.timeit: 
             elapsed_time = end_time - start_time
@@ -227,7 +230,7 @@ def main():
         print('2. Loading METEOR Scorer')
         print('3. Generate METEOR score')
         start_time = time.time()
-        results = compute_meteor_score(inp_data=proc_data, pred_col='pred')
+        results = compute_meteor_score(inp_data=proc_data, pred_col='pred', ans_idx=ans_idx)
         end_time = time.time()
         if args.timeit: 
             elapsed_time = end_time - start_time
@@ -236,7 +239,7 @@ def main():
     elif args.eval_mode == 'exact_match':
         print("2. Generating 'exact_match' scores")
         start_time = time.time()
-        results = compute_exact_match(inp_data=proc_data, pred_col='pred')
+        results = compute_exact_match(inp_data=proc_data, pred_col='pred', ans_idx=ans_idx)
         end_time = time.time()
         if args.timeit: 
             elapsed_time = end_time - start_time
@@ -245,11 +248,34 @@ def main():
     elif args.eval_mode == 'sbert':
         print("2. Generating 'sentence-bert' cosine scores")
         start_time = time.time()
-        results = compute_sbert_score(inp_data=proc_data)
+        results = compute_sbert_score(inp_data=proc_data, ans_idx=ans_idx)
         end_time = time.time()
         if args.timeit: 
             elapsed_time = end_time - start_time
             print(f' > sBERT Score evaluation time: {time.strftime("%H:%M:%S", time.gmtime(elapsed_time))}')
+
+    elif args.eval_mode == 'bleurt':
+        print("2. Loading BLEURT Scorer")
+        print("3. Generate BLEURT score")
+        start_time = time.time()
+        results = compute_bleurt_score(inp_data=proc_data, ans_idx=ans_idx)
+        end_time = time.time()
+        if args.timeit: 
+            elapsed_time = end_time - start_time
+            print(f' > BLEURT Score evaluation time: {time.strftime("%H:%M:%S", time.gmtime(elapsed_time))}')
+
+    elif args.eval_mode == 'moverscore':
+        print("2. Loading MoverScore")
+        print("3. Generate MoverScore")
+        start_time = time.time()
+        model = 'bert-base-uncased'
+        # For factual QA/ when using gt as is, '2' is recommended
+        n_gram = 2 if args.use_ans else 3
+        results = compute_moverscore(inp_data=proc_data, ans_idx=ans_idx, model=model, n_gram=n_gram)
+        end_time = time.time()
+        if args.timeit: 
+            elapsed_time = end_time - start_time
+            print(f' > MoverScore evaluation time: {time.strftime("%H:%M:%S", time.gmtime(elapsed_time))}')
 
     # Save the results
     # Ensure directory exists
