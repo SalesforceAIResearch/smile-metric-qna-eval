@@ -23,6 +23,54 @@ Alternatively, you can also install using pip:
 pip install git+https://github.com/SalesforceAIResearch/smile-metric-qna-eval.git
 ```
 
+## Quick Run
+
+Run the included sample script from the repository root to quickly verify your setup:
+
+```bash
+python3 smile_sample_usage.py
+```
+
+What this does:
+- Loads the sample data from `sample_data/sample_input.json`
+- Initializes SMILE with default settings (e.g., `ember-v1`, exact matching on)
+- Computes scores and prints a concise summary
+
+Example output (values will vary by environment/models):
+
+```text
+================================================================
+Step 1: Loading sample input 📥
+================================================================
+Loaded rows: 3 📦
+
+================================================================
+Step 2: Initializing SMILE 🙂
+================================================================
+
+================================================================
+Step 3: Computing SMILE scores 🧮⚙️
+================================================================
+
+================================================================
+Step 4: Results summary 📊
+================================================================
+Sentence embedding score (mean): 0.8421 ✨
+Keyword score (mean): 0.7667 🔑
+SMILE avg (mean): 0.8044 😊
+SMILE hm  (mean): 0.7923 🤝
+
+-- First item details 🔎 --
+question: What is the capital of France?
+answer  : Paris
+syn_ans : The capital of France is Paris.
+pred    : Paris is known to the capital of France.
+sent_emb_score: 0.8512 ✨
+kwd_score     : 0.7500 🔑
+avg           : 0.8006 😊
+hm            : 0.7952 🤝
+```
+
 ## Usage
 
 You can use SMILE as a Python library or from the command line.
