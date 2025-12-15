@@ -61,10 +61,10 @@ question: What is the capital of France?
 answer  : Paris
 syn_ans : The capital of France is Paris.
 pred    : Paris is known to the capital of France.
-sent_emb_score: 0.8512 ✨
-kwd_score     : 0.7500 🔑
-avg           : 0.8006 😊
-hm            : 0.7952 🤝
+sent_emb_score: 0.9115 ✨
+kwd_score     : 1.0000 🔑
+avg           : 0.9558 😊
+hm            : 0.9537 🤝
 ```
 
 ## Usage
