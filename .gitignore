@@ -3,11 +3,11 @@
 
 # Local documents and artifacts (untracked)
 *.pdf
+*.tex
+*_rebuttal.md
 
 # Python cache directories
 **/__pycache__/
 
 # Python virtual environments
 .venv/
-
-
