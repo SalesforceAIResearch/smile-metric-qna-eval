@@ -1,8 +1,7 @@
 # SMILE: A Composite Lexical-Semantic Metric for Question-Answering Evaluation
 
-[![arXiv](https://img.shields.io/badge/arXiv-2406.XXXX-blue.svg)](https://arxiv.org/abs/2406.XXXX)
-
 This repository provides an implementation of **SMILE: Semantic Metric Integrating Lexical Exactness**, a novel metric for evaluating natural language generation.
+
 ## What is SMILE?
 SMILE is a lightweight and reliable evaluation metric for textual and visual question answering tasks. Unlike traditional metrics like ROUGE, METEOR, and Exact Match that focus purely on lexical overlap, or embedding-based metrics like BERTScore that overlook lexical precision, SMILE strikes a balance by combining sentence-level semantics, keyword-level understanding, and exact lexical matching. This hybrid approach offers a more comprehensive and interpretable evaluation, aligning closely with human judgment while avoiding the cost, bias, and inconsistency often associated with LLM-based metrics.
 
@@ -11,17 +10,14 @@ SMILE is a lightweight and reliable evaluation metric for textual and visual que
 Clone this repository and install the dependencies:
 
 ```bash
-git clone git@github.com:SalesforceAIResearch/smile-metric-qna-eval.git
+git clone <repository-url>
 cd smile-metric-qna-eval
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Alternatively, you can also install using pip:
-```bash
-pip install git+https://github.com/SalesforceAIResearch/smile-metric-qna-eval.git
-```
+
 
 ## Quick Run
 
@@ -148,12 +144,11 @@ If you use this code or the SMILE metric in your research, please cite:
 ```
 @inproceedings{smile2025,
   title={SMILE: A Composite Lexical-Semantic Metric for Question-Answering Evaluation},
-  author={...},
-  booktitle={Proceedings of ARR 2025},
-  year={2025},
-  url={https://arxiv.org/abs/2406.XXXX}
+  author={Anonymous},
+  year={2025}
 }
 ```
+
 ## License
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license. 
@@ -168,17 +163,4 @@ Under the following terms:
 
 For more details, see the [full license text](https://creativecommons.org/licenses/by-nc/4.0/).
 
-> **Note**: This release is for research purposes only. This release should not be used to develop models that compete with OpenAI. This release should not be used to improve any other large language model (excluding Llama 2 or derivative works thereof).
-
-## Contributors
-
-- [Shrikant Kendre](https://github.com/shriawesome)
-- [Austin Xu]()
-- [Juan Carlos Niebles]()
-- [Shafiq Rayhan Joty]()
-- [Honglu Zhu]()
-- [Michael Ryoo]()
-
-We welcome contributions! Please open an issue or pull request.
-
-**For more details, see the [paper on arXiv](https://arxiv.org/abs/2406.XXXX).**
+> **Note**: This release is for research purposes only.

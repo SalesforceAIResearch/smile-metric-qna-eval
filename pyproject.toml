@@ -7,12 +7,7 @@ name="smile"
 version="0.1.0"
 description = "SMILE: A Composite Lexical-Semantic Metric for Question-Answering Evaluation"
 authors = [
-    {name="Shrikant Kendre"},
-    {name="Austin Xu"},
-    {name="Shafiq Joty"},
-    {name="Juan Carlos Niebles"},
-    {name="Honglu Zhou"},
-    {name="Michael Ryoo"}
+    {name="Anonymous"}
 ]
 readme = "README.md"
 requires-python = ">=3.9"
