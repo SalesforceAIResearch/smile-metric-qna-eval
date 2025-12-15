@@ -3,12 +3,16 @@ import argparse
 import json
 import numpy as np
 import time
+import sys
 import pickle as pkl
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
 from smile.smile import SMILE
 from utils import compute_rouge_score, compute_bert_score, compute_meteor_score, compute_exact_match, compute_sbert_score, compute_bleurt_score, compute_moverscore
-import sys
+
 from tqdm import tqdm
-sys.path.append('..')
+
 
 def parse_arguments():
     """
@@ -278,8 +282,10 @@ def main():
             print(f' > MoverScore evaluation time: {time.strftime("%H:%M:%S", time.gmtime(elapsed_time))}')
 
     # Save the results
-    # Ensure directory exists
-    os.makedirs(f'{os.path.sep}'.join(args.output_file.split(os.path.sep)[:-1]), exist_ok=True)
+    # Ensure directory exists (only if output_file has a directory component)
+    output_dir = os.path.dirname(args.output_file)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     print('4. Saving the results')
     save_dict(results, args.output_file)
     print(f' > Results saved at -> {args.output_file}')

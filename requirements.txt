@@ -1,7 +1,8 @@
-numpy
+numpy<2
 scikit-learn
 nltk
 tqdm
+tf-keras
 transformers
 openai
 requests
@@ -10,5 +11,6 @@ huggingface-hub
 bert-score
 rouge-score
 moverscore @ git+https://github.com/AIPHES/emnlp19-moverscore.git
+bleurt @ git+https://github.com/google-research/bleurt.git
 pyemd
 evaluate

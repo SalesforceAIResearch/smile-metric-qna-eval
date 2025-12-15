@@ -2,6 +2,7 @@ import time
 import json
 import bert_score
 import numpy as np
+import torch
 from tqdm import tqdm
 from rouge_score import rouge_scorer
 import os
@@ -183,7 +184,7 @@ def compute_bleurt_score(inp_data, ans_idx=1, checkpoint='BLEURT-20'):
     
     return {'scores': scores}
 
-def compute_moverscore(inp_data, ans_idx=1, model='distilbert-base-uncased', n_gram=2, device='cuda'):
+def compute_moverscore(inp_data, ans_idx=1, model='distilbert-base-uncased', n_gram=2, device='cpu'):
     """
     Computes MoverScore between reference and prediction strings using contextualized embeddings and Word Mover's Distance.
     
@@ -204,7 +205,7 @@ def compute_moverscore(inp_data, ans_idx=1, model='distilbert-base-uncased', n_g
                      1 = unigrams (individual words)
                      2 = bigrams (word pairs, recommended for QA - captures phrases like "New York")
                      3 = trigrams (better for longer contexts)
-        device (str): Device to use for computation (default: 'cuda').
+        device (str): Device to use for computation (default: 'cpu').
 
     Returns:
         dict: Dictionary with 'scores' key containing list of MoverScore values for each sample.
@@ -225,6 +226,7 @@ def compute_moverscore(inp_data, ans_idx=1, model='distilbert-base-uncased', n_g
     # Set the model via environment variable (MoverScore's way of selecting models)
     os.environ['MOVERSCORE_MODEL'] = model
     
+    # device = 'cuda' if torch.cuda.is_available() else 'cpu'
     ans = [str(data[ans_idx]) for data in inp_data]
     preds = [str(data[-1]) for data in inp_data]
 
