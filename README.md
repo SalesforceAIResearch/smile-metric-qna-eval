@@ -140,6 +140,32 @@ python3 pyscripts/generate_scores.py \
 ```
 > **Note**: You can set `--pred_file` in-case your predictions(i.e `pred`) are present in another file.
 
+## Troubleshooting
+
+### MoverScore Compatibility Issues
+
+If you're using MoverScore (`--eval_mode moverscore`) and encounter errors, you may need to patch the installed `moverscore_v2.py` file:
+
+#### Issue 1: CUDA Device Error
+```
+AssertionError: Torch not compiled with CUDA enabled
+```
+**Cause:** The library hardcodes `device = 'cuda'`, failing on machines without CUDA (e.g., macOS).
+
+#### Issue 2: NumPy `np.float` Deprecation
+```
+AttributeError: module 'numpy' has no attribute 'float'
+```
+**Cause:** `np.float` was deprecated in NumPy 1.20 and removed in NumPy 2.0.
+
+#### Fix (one-liner)
+Run this command to patch both issues:
+```bash
+sed -i '' -e "s/^device = 'cuda'$/device = 'cuda' if torch.cuda.is_available() else 'cpu'/" \
+          -e 's/np\.float)/float)/g' \
+    .venv/lib/python3.11/site-packages/moverscore_v2.py
+```
+> **Note:** Adjust the path based on your Python version and virtual environment location.
 
 ## Citation
 

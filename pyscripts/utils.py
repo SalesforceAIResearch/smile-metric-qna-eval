@@ -2,6 +2,7 @@ import time
 import json
 import bert_score
 import numpy as np
+import torch
 from tqdm import tqdm
 from rouge_score import rouge_scorer
 import os
@@ -183,7 +184,7 @@ def compute_bleurt_score(inp_data, ans_idx=1, checkpoint='BLEURT-20'):
     
     return {'scores': scores}
 
-def compute_moverscore(inp_data, ans_idx=1, model='distilbert-base-uncased', n_gram=2, device='cuda'):
+def compute_moverscore(inp_data, ans_idx=1, model='distilbert-base-uncased', n_gram=2, device='cpu'):
     """
     Computes MoverScore between reference and prediction strings using contextualized embeddings and Word Mover's Distance.
     
