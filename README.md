@@ -5,6 +5,44 @@ This repository provides an implementation of **SMILE: Semantic Metric Integrati
 ## What is SMILE?
 SMILE is a lightweight and reliable evaluation metric for textual and visual question answering tasks. Unlike traditional metrics like ROUGE, METEOR, and Exact Match that focus purely on lexical overlap, or embedding-based metrics like BERTScore that overlook lexical precision, SMILE strikes a balance by combining sentence-level semantics, keyword-level understanding, and exact lexical matching. This hybrid approach offers a more comprehensive and interpretable evaluation, aligning closely with human judgment while avoiding the cost, bias, and inconsistency often associated with LLM-based metrics.
 
+## Directory Structure
+
+```
+smile-metric-qna-eval/
+├── smile/
+│   ├── __init__.py
+│   └── smile.py                 # Core SMILE implementation
+├── pyscripts/
+│   ├── generate_scores.py       # Main scoring script for all metrics
+│   ├── generate_syn_ans.py      # Synthetic answer generation
+│   ├── eval_perf.py             # Correlation analysis and evaluation
+│   ├── eval_gpt_perf.py         # GPT-based evaluation script
+│   ├── utils.py                 # Utility functions
+│   ├── conversations.py         # LLM conversation templates
+│   └── view_results.py          # Results visualization
+├── scripts/
+│   ├── example_generate_scores.sh   # Example: Generate SMILE scores
+│   ├── example_syn_ans.sh           # Example: Generate synthetic answers
+│   └── example_gpt_eval.sh          # Example: Run GPT-based evaluation
+├── datasets/
+│   ├── full_set/                # Full evaluation datasets
+│   │   └── syn_ans/
+│   │       └── syn_model-llama-3.2-3b-instruct/
+│   │           └── *.jsonl
+│   ├── subset_200/              # 200-sample subsets for quick experiments
+│   │   └── syn_ans/
+│   │       └── syn_model-llama-3.2-3b-instruct/
+│   │           └── *.jsonl
+│   └── human_eval/              # Human evaluation annotations
+│       └── reviewer_*.csv
+├── sample_data/
+│   └── sample_input.json        # Sample input for quick testing
+├── smile_sample_usage.py        # Quick-start sample script
+├── requirements.txt
+├── pyproject.toml
+└── README.md
+```
+
 ## Installation
 
 Clone this repository and install the dependencies:
@@ -17,7 +55,10 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-
+For MoverScore support (optional):
+```bash
+pip install -U git+https://github.com/AIPHES/emnlp19-moverscore.git
+```
 
 ## Quick Run
 
@@ -136,6 +177,45 @@ python3 pyscripts/generate_scores.py \
 ```
 > **Note**: You can set `--pred_file` in-case your predictions(i.e `pred`) are present in another file.
 
+## Supported Metrics
+
+| Metric | Description |
+|--------|-------------|
+| **SMILE** | Our proposed composite lexical-semantic metric |
+| **ROUGE-L** | Longest common subsequence F1 |
+| **BERTScore** | Contextual embedding similarity |
+| **METEOR** | Token-level matching with synonyms |
+| **Exact Match** | Exact string matching |
+| **sBERT** | Sentence-BERT cosine similarity |
+| **BLEURT** | Learned evaluation metric |
+| **MoverScore** | Earth mover's distance with BERT embeddings |
+| **GPT-3.5/GPT-4o** | LLM-as-judge evaluation |
+
+## Configuration Options
+
+### Embedding Models
+- `ember-v1`: Default embedding model for SMILE
+
+### Synthetic Answer Models
+- `llama-3.2-3b-instruct`: Local Llama model (used in provided datasets)
+- `gpt-3.5-turbo`: OpenAI GPT-3.5 (requires API key)
+
+## Datasets
+
+The sample datasets include synthetic answers generated using Llama-3.2-3B-Instruct for:
+
+| Category | Datasets |
+|----------|----------|
+| **Language QA** | HotpotQA, MRQA, MuSiQue, NaturalQuestions, TriviaQA |
+| **Image QA** | DocVQA, TextVQA, POPE |
+| **Video QA** | TGIF, MSVD, MSRVTT |
+
+## Notes
+
+1. All paths in the scripts are relative and should work from the package root directory.
+2. GPU is recommended for faster embedding generation.
+3. For GPT-based evaluation, you need to provide your own OpenAI API key.
+4. The `subset_200` contains 200 samples per dataset for faster experimentation.
 
 ## Troubleshooting
 
