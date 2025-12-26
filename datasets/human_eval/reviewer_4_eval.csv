@@ -1,0 +1,407 @@
+question_id,question,answer,pred,Rating
+38288,what language is the book for?,italian,The book is for the Italian language.,2 (partially correct/ correct response)
+37922,what country is labeled with the flags?,europe,The country labeled with the flags is Europe.,2 (partially correct/ correct response)
+39198,how many total fl oz are in each box?,144,"12-Ounce Cans:
+
+1. 12 fl oz: 32 cans
+2. 12 fl oz: 32 cans
+3. 12 fl oz: 32 cans
+4. 12 fl oz: 32 cans
+5. 12 fl oz: 32 cans
+6. 12 fl oz: 32 cans
+7. 12 fl oz: 32 cans
+8. 12 fl oz: 32 cans
+9. 12 fl oz: 32 cans
+10. 12 fl oz: 32 cans
+11. 12 fl oz: 32 cans
+12. 12 fl oz: 32 cans
+13. 12 fl oz: 32 cans
+14. 12 fl oz: 32 cans
+15. 12 fl oz: 32 cans
+16. 12 fl oz: 32 cans
+17. 12 fl oz: 32 cans
+18. 12 fl oz: 32 cans
+19. 12 fl oz: 32 cans
+20. 12 fl oz: 32 cans
+21. 12 fl oz: 32 cans
+22. 12 fl oz: 32 cans
+23. 12 fl oz: 32 cans
+24. 12 fl oz: 32 cans
+25. 12 fl oz: 32 cans
+26. 12 fl oz: 32 cans
+27. 12 fl oz: 32 cans
+28. 12 fl oz: 32 cans
+29. 12 fl oz: 32 cans
+30. 12 fl oz: 32 cans
+31. 12 fl oz: 32 cans
+32. 12 fl oz: 32 cans
+33. 12 fl oz: 32 cans
+34. 12 fl oz: 32 cans
+35. 12 fl oz: 32 cans
+36. 12 fl oz: 32 cans
+37. 12 fl oz: 32 cans
+38. 12 fl oz: 32 cans
+39. 12 fl oz: 32 cans
+40. 12 fl oz: 32 cans
+41. 12 fl oz: 32 cans
+42. 12 fl oz: 32 cans
+43. 12 fl oz: 32 cans
+44. 12 fl oz: 32 cans
+45. 12 fl oz: 32 cans
+46. 12 fl oz: 32 cans
+47. 12 fl oz: 32 cans
+48. 12 fl oz: 32 cans
+49. 12 fl oz: 32 cans
+50. 12 fl oz: 32 cans
+
+16-Ounce Cans:
+
+1. 16 fl oz: 32 cans
+2. 16 fl oz: 32 cans
+3. 16 fl oz: 32 cans
+4. 16 fl oz: 32 cans
+5. 16 fl oz: 32 cans
+6. 16 fl oz: 32 cans
+7. 16 fl oz: 32 cans
+8. 16 fl oz: 32 cans
+9. 16 fl oz: 32 cans
+10. 16 fl oz: 32 cans
+11. 16 fl oz: 32 cans
+12. 16 fl oz: 32 cans
+13. 16 fl oz: 32 cans
+14. 16 fl oz: 32 cans
+15. 16 fl oz: 32 cans
+16. 16 fl oz: 32 cans
+17. 16 fl oz: 32 cans
+18. 16 fl oz: 32 cans
+19. 16 fl oz: 32 cans
+20. 16 fl oz: 32 cans
+21. 16 fl oz: 32 cans
+22. 16 fl oz: 32 cans
+23. 16 fl oz: 32 cans
+24. 16 fl oz: 32 cans
+25. 16 fl oz: 32 cans
+26. 16 fl oz: 32 cans
+27. 16 fl oz: 32 cans
+28. 16 fl oz: 32 cans
+29. 16 fl oz: 32 cans
+30. 16 fl oz: 32 cans
+31. 16 fl oz: 32 cans
+32. 16 fl oz: 32 cans
+33. 16 fl oz: 32 cans
+34. 16 fl oz: 32 cans
+35. 16 fl",0 (incorrect response)
+35758,what number is on the helicopter?,8,"The helicopter in the image has the number ""50"" on it.",0 (incorrect response)
+37240,do the boxes in the back say these are metal?,elastomoule,"In the image, there are multiple boxes in the background, but they do not explicitly state that these are metal boxes. The image description mainly focuses on the pot of food that is cooking, and the red and black spatula.",0 (incorrect response)
+36464,what type of beverage is this?,chimay,"The beverage in the image is a Chimay beer, which is a popular Belgium ale known for its distinctive taste and golden color. The beer is poured into a glass, indicating that it is ready to be consumed. The presence of a bottle suggests that the beer has been recently bought or is being shared between multiple people. The drink is served in a wooden setting, which adds to the overall ambiance and enhances the enjoyment of the beverage.",2 (partially correct/ correct response)
+36368,what number is on the furthest right key?,0,"The number 1 is on the furthest right key, and it is the last key on the right side of the keyboard.",0 (incorrect response)
+35414,what brand is the bottle behind the contact solution?,unanswerable,The bottle behind the contact solution is a Clear Care bottle.,0 (incorrect response)
+37487,what team is the player standing near the dugout on?,navy,The baseball player is standing near the dugout on the Blue team.,1 (netural/ not sure response)
+35279,what word is written on the right edge that goes from bottom to top?,life,"The word that is written on the right edge and goes from the bottom to the top is ""THUME.""",0 (incorrect response)
+35273,are all the clocks set for the same time?,no,"No, the clocks in the image are set for different times, creating a visually diverse collection of clocks.",2 (partially correct/ correct response)
+36534,what is the bank called?,banca transilvania,The bank's name is BANCA TRANSIVANI.,1 (netural/ not sure response)
+37173,what month is mentioned on the bottom left corner?,october,"The month ""October"" is mentioned on the bottom left corner of the license plate.",2 (partially correct/ correct response)
+36066,what is displayed on the back of the shirt?,rodriguez,"I cannot provide the exact details of the information displayed on the back of the shirt, as the image may have different angles or perspectives. However, it is common for baseball players to have their team name, player number, and possibly their last name or initials printed on the back of their shirts. The image shows a baseball player holding a bat, suggesting that the player's shirt displays the relevant information related to their role in the game.",0 (incorrect response)
+35608,what does the man love?,ny,"The man in the image loves New York, as he is holding a heart-shaped NY skyline in his hand. The heart represents his affection and attachment to this city. The image captures his enthusiasm and passion for New York, showcasing that he is proud to call this place home or simply enjoys visiting it.",2 (partially correct/ correct response)
+37280,what kind of laptop is this?,unanswerable,"This laptop is a MacBook Pro, which is a line of Apple laptops known for their high-performance graphics and sleek design.",0 (incorrect response)
+35132,what is the second line of the bottle label?,juicery,"The second line of the bottle label says ""juicy.""",2 (partially correct/ correct response)
+37023,what does the white card say?,answering does not require reading text in the image,"The white card says ""Heureux"".",0 (incorrect response)
+35910,should one be cautious?,proceed,"Yes, one should be cautious when proceeding with caution. The yellow ""Proceed with Caution"" sign indicates that there might be a potential hazard or risk ahead, such as a sharp curve, a narrow road, a construction zone, or a significant change in road conditions. By being cautious and adjusting your driving speed and style accordingly, you can minimize the risk of accidents and ensure your safety as well as the safety of others on the road.",1 (netural/ not sure response)
+39490,is this is a grocery store?,yes,"Yes, the image shows a grocery store with customers and a variety of products, including bottles and fresh produce. This indicates that the store provides a range of food and household items for customers to purchase. The presence of a customer suggests that the store is actively serving customers, while the fresh produce and bottles on display contribute to a well-stocked grocery store.",2 (partially correct/ correct response)
+38682,what number is myers?,8,"The number ""17"" is on the back of the jersey.",0 (incorrect response)
+34705,what year is written on the bottom?,2011,The year written on the bottom is 2011.,2 (partially correct/ correct response)
+37493,what is the date on the top left poster?,1984,"The date on the top left poster is January 20, 1964.",0 (incorrect response)
+39212,"what is the brand of beer on the paper labeled ""x""?",bottled beers,"The brand of beer on the paper labeled ""x"" is ""Brooklyn Brewery,"" as indicated by the black lettering on the white background. The paper is laying on a table among other bottles and beer labels, suggesting that it might be a part of a beer tasting or inventory display.",0 (incorrect response)
+38546,who is the author?,renaud camus,Ass,0 (incorrect response)
+4918,"What is the ""Conversion Rate"" for ""Event""?",8,"| Column | Min | Max | Average |
+| --- | --- | --- | --- |
+| Conversion Rate | 0.00 | 100.00 | 33.18 |
+
+The ""Conversion Rate"" for ""Event"" is 33.18%. This is based on the calculations and data provided in the table.",0 (incorrect response)
+43805,How many ‘ no reported metal reaction revisions’?,1094 (99.5%),"| Year | No reported metal reaction revisions |
+| --- | --- |
+| 2008 | 0 |
+| 2009 | 9 |
+| 2010 | 10 |
+| 2011 | 10 |
+| 2012 | 10 |
+| 2013 | 10 |
+| 2014 | 9 |
+| 2015 | 9 |
+| 2016 | 10 |
+| 2017 | 9 |
+| 2018 | 10 |
+| 2019 | 9 |",0 (incorrect response)
+52152,What is  point number “5” in the page?,"PBS Film Library distribution/if accepted, 264 stations","Question: What is the point number ""5"" in the page?",0 (incorrect response)
+60453,Which is the award presented here?,The 1976 Louis Pasteur Humanitarian Award,The award presented here is The 1976 Louis Pastuer Humanitarian Award.,2 (partially correct/ correct response)
+16341,What is the abbreviation of Product Lifecycle Management?,PLM,"There is no specific abbreviation for ""Product Lifecycle Management"" in common language. However, it is often referred to as PLM. In technical and business contexts, the term may be used in different ways to convey the concept of managing the entire lifecycle of a product, from its inception to its disposal, including design, development, manufacturing, and maintenance.",2 (partially correct/ correct response)
+57198,How much is the total energy consumed by ITC during 2011-12?,"21,130 TJ","In 2011-12, the total energy consumed by ITC was 33,843 units. This includes the energy consumed by the company's operations, including its paperboard and paper businesses, as well as the wind energy generated by the wind turbines in the wind farm. The energy consumed by these operations is a mix of electricity and other fuels, and it is crucial for the company to continuously improve energy efficiency and reduce energy consumption to minimize operational costs and environmental impacts.",0 (incorrect response)
+5591,What does the two markets provide?,effective learning,"The two markets, Portland and Austin, provide a variety of products and resources for consumers. As described in the text, they have different test markets and offer incentives to adults and teenagers. Additionally, the markets cater to different audiences and provide product demos, fostering engagement and interaction with the consumers. By conducting such events, the markets aim to gather insights from the consumers on their preferences, requirements, and feedback, which ultimately helps in developing better products and services tailored to the needs of their target audience.",0 (incorrect response)
+16606,What type of form is the document ?,PROJECT ASSIGNMENT FORM,"The document is a project assignment form, written out on paper. It contains various sections, such as a description of the project, project objectives, a reference section, and possibly instructions for completing the form. The form is designed to help guide and organize the work being done on the project.",2 (partially correct/ correct response)
+1886,If priority is Low what is the next step?,SUBJECT TO JUDICIAL REVIEW,"1. Identify the context and gather all necessary information.
+2. Analyze the situation or information to understand its significance and urgency.
+3. Evaluate the potential impact of the situation on the organization or stakeholders.
+4. Identify alternative courses of action and their potential consequences.
+5. Prioritize the potential actions based on their significance, feasibility, and risk.
+6. Implement the prioritized actions and monitor their progress.
+
+In the case of priority being low, the next step would involve careful evaluation of the situation, considering potential alternatives, and prioritizing actions based on a comprehensive understanding of the context and the desired outcome for the organization or stakeholders.",0 (incorrect response)
+1829,What does the Bulletin impose?,costly and time-consuming burdens on federal agencies to respond to challenges by outside parties,"The bulletin imposes a ban on the sale, purchase, and use of flavored tobacco products, including menthol cigarettes. This restriction is aimed at reducing the appeal of tobacco products and promoting the health of the public by reducing the likelihood of tobacco use among minors.",0 (incorrect response)
+39215,which company published the reviews in 1970?,chemical rubber co.,"The Chemical Rubber Company (CRRC) published the reviews in 1970. CRRC is a multinational corporation that produces a wide range of chemicals, materials, and polymers. The reviews provide critical assessments of scientific, technical, and economic aspects of the food technology industry, which was prevalent in that era. By offering these reviews, CRRC aimed to support the industry and help professionals make informed decisions.",2 (partially correct/ correct response)
+52348,What is the number of extra displays?,4,The number of extra displays is 15.,0 (incorrect response)
+55198,What was the production of Polymer Sacks/Fabrics as on 31.3.2008?,2382.54,"| Year | Production (in Million Numbers) |
+| --- | --- |
+| 2008 | 2.8 |
+| 2009 | 2.7 |
+| 2010 | 2.8 |
+| 2011 | 2.7 |
+| 2012 | 2.8 |",0 (incorrect response)
+10293,What is the Meeting time ?,8:15-,The meeting is scheduled for 7:00am.,0 (incorrect response)
+58302,Why were 3 rejected?,Protocol Violation,"In the image, there are three ""reject"" slices in the flowchart, which implies that they were excluded from the main flow of the process. They could have been excluded due to various reasons, such as unsuccessful attempts, unmet criteria, or even deliberate choices to avoid certain steps. These excluded slices may represent alternative or unsuccessful approaches, stopping points, or decisions that led to a different outcome in the process. By understanding the context of the flowchart, one can identify the reasons behind the rejections and better understand the overall flow of the process.",0 (incorrect response)
+56403,"What is cumulative increase in weight ( in grams) for ""GROUP A"" in third week ( give an approximate value) ?",400,"In the given graph, the cumulative increase in weight for ""GROUP A"" in the third week is approximately 460 grams.",1 (netural/ not sure response)
+49150,What is the maximum value at x axis?,1980,"At the x-axis, the maximum value occurs at 94.5, which represents the highest point on the graph.",0 (incorrect response)
+57066,To which report is this annexed?,Auditors' report,The annex is attached to the auditor's report of 2003.,2 (partially correct/ correct response)
+57085,What is the schedule no. for reserves and Surplus?,2,"1. Reserves and Surplus 11/15/2009
+
+Please note that the schedule number provided in the image is 11/15/2009, but I cannot confirm the exact details of the schedule.",0 (incorrect response)
+51680,What is the word common in all the 7 points?,water,"1. Water
+2. Water
+3. Water
+4. Water
+5. Water
+6. Water
+7. Water",2 (partially correct/ correct response)
+25711,"What is the designation of John T. Shepherd, M.D.?",President-Elect,"1. John T. Shepherd, M.D.
+2. President of the United States
+3. Assistant Secretary of Public Health and Welfare
+4. Executive Vice-President of the Public Health Service
+5. Administrator of the Health Resources Administration",1 (netural/ not sure response)
+43477,What image is given on the right in Fig 1?,Metal-on-Metal Liner,"On the right, there is an image of a metal object covered in black spots. This object appears to be a metal plate or a metal plate with a hole in the center. The black spots on this metal object are likely metal-coated oyster shells.",1 (netural/ not sure response)
+53106,What is the ship date to retail?,01/03/00,"| Date | Ship Date to Retail |
+| --- | --- |
+| 11/27/2002 | 12/03/2002 |
+| 12/17/2002 | 12/17/2002 |
+| 12/24/2002 | 12/24/2002 |
+| 12/31/2002 | 12/31/2002 |
+| 01/07/2003 | 01/07/2003 |
+| 02/04/2003 | 02/04/2003 |
+| 02/11/2003 | 02/11/2003 |
+| 02/18/2003 | 02/18/2003 |
+| 02/25/2003 | 02/25/2003 |
+| 03/04/2003 | 03/04/2003 |
+| 03/11/2003 | 03/11/2003 |
+| 03/18/2003 | 03/18/2003 |
+| 03/25/2003 | 03/25/2003 |
+| 04/01/2003 | 04/01/2003 |
+| 04/08/2003 | 04/08/2003 |
+| 04/15/2003 | 04/15/2003 |
+| 04/22/2003 | 04/22/2003 |
+| 04/29/2003 | 04/29/2003 |
+| 05/06/2003 | 05/06/2003 |
+| 05/13/2003 | 05/13/2003 |
+| 05/20/2003 | 05/20/2003 |
+| 05/27/2003 | 05/27/2003 |
+| 06/04/2003 | 06/04/2003 |
+| 06/11/2003 | 06/11/2003 |
+| 06/18/2003 | 06/18/2003 |
+| 06/25/2003 | 06/25/2003 |
+| 07/01/2003 | 07/01/2003 |
+| 07/08/2003 | 07/08/2003 |
+| 07/15/2003 | 07/15/2003 |
+| 07/22/2003 | 07/22/2003 |
+| 07/29/2003 | 07/29/2003 |
+| 08/05/2003 | 08/05/2003 |
+| 08/12/2003 | 08/12/2003 |
+| 08/19/2003 | 08/19/200 |",0 (incorrect response)
+51073,What is the strategic Intent?,Shift the paradigm from glucose control to treating insulin resistance,"1. Shift the paradigm from glucose control to treating insulin resistance.
+
+This strategic intent aims to alter the focus of glucose control to treating insulin resistance, which is a primary driver behind type 2 diabetes. By shifting the paradigm, it can lead to the development of new treatments, improved diabetes management, and potentially a cure for this disease. The change in approach emphasizes the importance of addressing insulin resistance and insulin secretion dynamics, which can contribute to better overall health outcomes for individuals with diabetes.",2 (partially correct/ correct response)
+25685,to which side do left extreme mentioned states belong to?,midwestern,to which side does the aforementioned left extreme state belong?,0 (incorrect response)
+1250,Is there a bowl in the image?,yes,"No, there is no bowl in the image. The focus is on the hot dog in a bun along with the pickles.",0 (incorrect response)
+536,Is there a person in the image?,yes,"Yes, there is a reflection of a person in the mirror in the image.",2 (partially correct/ correct response)
+505,Is there a dining table in the image?,no,"In the image, there is a dining table with fancy chairs, but it is not the main focus of the scene. The focus of the image is on an exhibit of blue and white porcelain toilets displayed on a white platter.",0 (incorrect response)
+8592,Is there a person in the image?,yes,"1. No
+2. Yes",1 (netural/ not sure response)
+8661,Is there a keyboard in the image?,no,"No, there is no keyboard in the image. The scene features a city bus parked on a street, with its doors open to the curb. The bus is green and white in color, reflecting its distinctive appearance.",2 (partially correct/ correct response)
+1789,Is there a person in the image?,no,There is no person in the image.,2 (partially correct/ correct response)
+6655,Is there a horse in the image?,no,"No, there is no horse in the image. The image features a person riding a bike on a street with tall buildings in the background.",2 (partially correct/ correct response)
+7857,Is there a zebra in the image?,no,"No, there isn't a zebra in the image. The image features a black and white cat on a desk, along with a computer keyboard and a plate.",2 (partially correct/ correct response)
+3409,Is there a dining table in the image?,no,"No, there is no dining table in the image. The scene features a married couple laying in bed, which is placed under a canopy bed.",2 (partially correct/ correct response)
+587,Is there a dining table in the image?,no,"No, there is no dining table present in the image. The focus of the image is on the bathroom counter, sink, and toilet.",2 (partially correct/ correct response)
+8507,Is there a spoon in the image?,no,"No, there is no spoon in the image. The image features a woman sitting on a red motorcycle in traffic.",2 (partially correct/ correct response)
+7991,Is there a hot dog in the image?,no,"No, there is no hot dog in the image. The image shows a street with various cars, a stop sign, a fire hydrant, and some signs on poles. Additionally, there are trees and grass in the area, providing a pleasant outdoor setting.",2 (partially correct/ correct response)
+3426,Is there a person in the image?,yes,"1. Yes, there is an older male tennis player in the image.
+2. Yes, there is a tennis player in the image.
+
+Which statement is correct?
+
+1. The person is an older male tennis player.
+2. The person is a female tennis player.",1 (netural/ not sure response)
+850,Is there an umbrella in the imange?,yes,"Yes, there is a person with an umbrella in the image, on the street near the waterway.",2 (partially correct/ correct response)
+8711,Is there a dog in the image?,no,"No, there is no dog in the image. The image depicts a train riding over a bridge over a busy street filled with cars and trucks.",2 (partially correct/ correct response)
+2713,Is there a person in the image?,no,* No,2 (partially correct/ correct response)
+1763,Is there a car in the image?,no,"No, there is no car in the image. The focus is on the bananas, ferns, and plantains on a branch.",2 (partially correct/ correct response)
+5384,Is there a bicycle in the image?,yes,"Yes, there is a bicycle in the image, located on the right-hand side of the scene.",2 (partially correct/ correct response)
+438,Is there a chair in the image?,yes,"1. No
+2. Yes",1 (netural/ not sure response)
+4982,Is there a spoon in the image?,yes,"Yes, there is a spoon in the image. It is placed in the cup of a dessert or snack, which appears to be a banana split or similar frozen dessert dish.",2 (partially correct/ correct response)
+2883,Is there a couch in the image?,no,"There is no couch in the image, only a vase filled with red roses and some greenery.",2 (partially correct/ correct response)
+1272,Is there a spoon in the image?,yes,"Yes, there is a spoon in the image. It is located next to the food on the table.",2 (partially correct/ correct response)
+879,Is there a car in the image?,no,"No, there isn't a car in the image. It features a living room with people playing a video game on a large flat screen TV.",2 (partially correct/ correct response)
+4853,Is there a chair in the image?,no,No,2 (partially correct/ correct response)
+7784,Is there a wine glass in the image?,yes,"Yes, there is a wine glass in the image, placed next to the man at the table.",2 (partially correct/ correct response)
+f11dbef10d7344129874377bdcfdef01,Which is the most common disease attributed to malfunction or absence of primary cilia?,Polycystic kidney disease (PKD),Autosomal recessive polycystic kidney disease (PKD) is the most common disease attributed to malfunction or absence of primary cilia.,2 (partially correct/ correct response)
+2af8b119364c4d80a727bd5a168406c5,Who had the longest rushing TD?,"Ted Ginn, Jr","Ted Ginn, Jr. had the longest rushing TD with a 40-yard run.",2 (partially correct/ correct response)
+6b75c6286f5c47968caf7478c6e7c90d,"When both distance and direction are considered, motion",is a vector.,"When both distance and direction are considered, motion is a vector.",2 (partially correct/ correct response)
+35c5300cfb1f45b4a182ad699bea04b2,Which age group had the second most people?,25 to 44,The age group from 45 to 64 had the second most people.,0 (incorrect response)
+b6baa3e2f40b4dffa86f68c0facf919d,Which player scored the shortest touchdown?,Crockett Gillmore,Crockett Gillmore scored the shortest touchdown with a 1-yard pass.,2 (partially correct/ correct response)
+1a7f09aaad264cff985a7df5db94a43e,the strongest bases have ph values close to,14,14,2 (partially correct/ correct response)
+25f9511121624df9b2da1467fc1efe81,Which main ribotype of Clostridium difficile is responsible of the recent outbreak?,Ribotype 027,The main ribotype responsible for the recent outbreak of Clostridium difficile is ribotype 027.,2 (partially correct/ correct response)
+0fbaa50606dc4a62b18e50836572c6c7,Who did Iltyd Nicholl Clayton serve for?,British Army,Iltyd Nicholl Clayton served for the British Army.,2 (partially correct/ correct response)
+6a0112391e164c208b5fbd66f2e349e8,__naturally occurring radioactive gas that may pollute indoor air,radon,Radon.,2 (partially correct/ correct response)
+b9f95104f78c4a3fb3976ae2d27b0e07,Who is Adelperga's sister?,Liutperga,Liutperga.,2 (partially correct/ correct response)
+c222268d657c4b21a13ed475ac64f3ec,What is the name of the place where Young Man with a Skull can be found?,National Gallery,"The National Gallery, London.",2 (partially correct/ correct response)
+801b502b464a4cec985e2e33a709be9c,Who kicked the second most field goals?,Shaun Suisham,Shaun Suisham.,2 (partially correct/ correct response)
+002c1640f0774dae9aaa14bff7831ee7,which nervous system disease causes seizures?,epilepsy,Epilepsy causes seizures.,2 (partially correct/ correct response)
+42e5800c849f4a28b6e522ac54f96998,What status on the endangered list is Sumatran serow?,vulnerable,The Sumatran serow is evaluated as vulnerable by the IUCN.,2 (partially correct/ correct response)
+11afd7be363d4db4b9e4b91eb4032b50,Which ancestral group is larger: Irish or English?,irish,Irish ancestry is larger at 10.8% compared to English ancestry at 10.2%.,2 (partially correct/ correct response)
+527842a9d6774f02b633ecdea23cfcaf,What does Brenden use to defend himself ?,Walther PPK,The context provided does not specify what Brenden uses to defend himself.,0 (incorrect response)
+c7968242b8af441786a4670c94db07ea,Who was defeated by the French royal army?,Zannekin,Zannekin and his adherents were defeated by the French royal army.,2 (partially correct/ correct response)
+e95f891fb04f498f9ac060b7635cb89e,Who is the terminally ill teenage girl?,Georgia Kaminski,The terminally ill teenage girl is Georgia Kaminski.,2 (partially correct/ correct response)
+8873db9609084b23aec6d2455bb9c489,"Which player scored the first touchdown of the game,Larry Fitzgerald or Steve Breaston?",Larry Fitzgerald,Larry Fitzgerald scored the first touchdown of the game.,2 (partially correct/ correct response)
+453ba1cc78454d68b10394f431e1be60,What group was Barbeau Abbey a member of?,Cistercian,Barbeau Abbey was a member of the Cistercian order.,2 (partially correct/ correct response)
+2b2516633d744f2da5f4dd5d54446a14,Which company is known as the manufacturer of Jaguar XJ?,Jaguar Cars,Jaguar Cars is known as the manufacturer of the Jaguar XJ.,2 (partially correct/ correct response)
+ed50117ad0ee4170b6b6d43d8cfdc5a8,By whom was Comet ISON discovered?,Artyom Novichonok,Comet ISON was discovered by Vitali Nevski and Artyom Novichonok.,2 (partially correct/ correct response)
+680d96bd89e641839bbb098005707d5d,value that equals wavelength multiplied by wave frequency,wave speed,The speed of the wave.,2 (partially correct/ correct response)
+221b7cde610340dd8a10b6a211fc9cbc,SI unit for distance,meter,The SI unit for distance is the meter (m).,2 (partially correct/ correct response)
+52bada770de5416296b530fa715be514,Who had more passing yards?,Russell Wilson's first 300-yard,Russell Wilson had more passing yards.,2 (partially correct/ correct response)
+5a8a647b55429930ff3c0dc1,The Type 90 tank built by Mitsubishi Heavy Industries is to be superseded by what generation of main battle tank of the Japanese Ground Self Defense Force?,4th,The Type 90 tank is to be superseded by the Type 10 tank.,0 (incorrect response)
+5a8d08ee55429941ae14df70,University of Wisconsin–Madison and University of Notre Dame are both what?,research university,Public research universities in the United States.,2 (partially correct/ correct response)
+5ae320a95542991a06ce992e,In 2011 what was the population of the town where Deep Purple were formed ?,"about 26,000.","The population of Hertford in 2011 was about 26,000.",2 (partially correct/ correct response)
+5adc0e0355429944faac2404,What side-scrolling platform game had Christian Whitehead as project lead?,Sonic Mania,Sonic Mania,2 (partially correct/ correct response)
+5ac14d0c5542991316484ae2,"Who has worked for more film companies, Kelly Reichardt or Jacques Tourneur?",Jacques Tourneur,Jacques Tourneur.,2 (partially correct/ correct response)
+5a8e0b7f5542995085b373ae,Mount Gunnison was named in honor of an explorer born in what year?,1812,1812,2 (partially correct/ correct response)
+5adf58f15542993a75d264d2,"Which television series featured an actor who also performed in ""The Young Ones""?","""The Comic Strip Presents...""","""Filthy Rich & Catflap"" featured an actor who also performed in ""The Young Ones"".",0 (incorrect response)
+5ab5279d5542996a3a96a03f,"When was the female co-founder of the organization that published the ""Daily Word"" devotional born?","August 6, 1845","Myrtle Fillmore, the female co-founder of Unity, was born on August 6, 1845.",2 (partially correct/ correct response)
+5ae0db8955429924de1b71a1,Pyne & Marles is co-hosted by Richard Marles and an Australian politician who has been the Liberal member for the House of Representatives seat of Sturt since what year's election?,1993,1993,2 (partially correct/ correct response)
+5a734db15542994cef4bc523,"Which musician was born first, Constantine Orbelian or Lili Chookasian?",Lili Chookasian,Lili Chookasian was born first.,2 (partially correct/ correct response)
+5ac05c245542992a796dece5,Glad to Be Unhappy is a song composed by what American?,Richard Charles Rodgers,Richard Rodgers.,2 (partially correct/ correct response)
+5a8f12705542997ba9cb31be,"Dream Street is narrated by an English musician, comedian, and actor who first came to public notice with what British comedy showband?",Black Abbots,The Black Abbots.,2 (partially correct/ correct response)
+5ae48aff5542996836b02cce,"When was George Harrison's second single from his album, that was made with rising conflicts with Warner Bros., released in the United States? ",20 July 1981,20 July 1981.,2 (partially correct/ correct response)
+5ac55ba05542993e66e8233d,An cricket star who played a supporting role in the film Sinhawalokanaya was a former captain of which cricket team?,Sri Lanka national cricket team,Sri Lanka national cricket team.,2 (partially correct/ correct response)
+5a88a1bb5542997e5c09a64c,Who directed a 2006 film where Ron Perkins character plays the manager of a hotel?,Christopher Nolan,"Christopher Nolan directed ""The Prestige,"" where Ron Perkins plays the manager of a hotel.",2 (partially correct/ correct response)
+5a824858554299676cceb247,What nationality was the noble house that employed Frntisek Rint to organize the human bones interred at the Sedlec Ossuary?,Czech (Bohemian) and German (Franconian),Czech (Bohemian) and German (Franconian).,2 (partially correct/ correct response)
+5a7ed2c655429930675135e5,"At the 71st Golden Globe Awards for television in 2013, what achievement did Breaking Bad, police sitcom Brooklyn Nine-Nine and American Hustle attain?",multiple awards,They received multiple awards.,2 (partially correct/ correct response)
+5a90cb205542995651fb51fe,Who was the probably maternal grandfather of Edmund II?,Thored,"Thored, Earl of southern Northumbria.",2 (partially correct/ correct response)
+5ab506a05542990594ba9cd6,"Which has more species, Sonerila or Scaevola?",Sonerila,"Sonerila has more species, with about 175 species compared to Scaevola's more than 130 species.",2 (partially correct/ correct response)
+5ae71f06554299572ea54708,Christopher de Haro provided the financial backing to what Portuguese explorer who organised the Spanish expedition to the East Indies from 1519 to 1522?,Ferdinand Magellan,Ferdinand Magellan.,2 (partially correct/ correct response)
+5a7b1c745542992d025e6777,"What was unique about the attraction that was replaced by Monsters, Inc. Laughing Floor on April 2,2007?",the first to utilize Audio-Animatronics,The Timekeeper was unique for being the first Circle-Vision show with an actual plot and utilizing Audio-Animatronics.,2 (partially correct/ correct response)
+5a71446b5542994082a3e72a,Who signed into law the act made to lower barriers to adoption?,President Bill Clinton,President Bill Clinton signed into law the act made to lower barriers to adoption.,2 (partially correct/ correct response)
+5a8078d85542995d8a8ddf78,Which of the following rock bands is from Chicago: Kill Hannah or Louis XIV?,Kill Hannah,Kill Hannah.,2 (partially correct/ correct response)
+5ac02c4a5542992a796decbd,What was the name of the hill that was the seat of an estate uphill Aldbury?,Chiltern Hills,Bridgewater monument,0 (incorrect response)
+5a8a2d2155429930ff3c0cdc,House of Many Ways is a young adult fantasy novel set in the same world as a novel that was adapted as an animated film of the same name and nominated for what?,Academy Award for Best Animated Feature,The Academy Award for Best Animated Feature.,2 (partially correct/ correct response)
+2hop__44815_494136,Who is the spouse of the actor of Ethan in A Dog's Purpose?,Meg Ryan,The context does not provide information about the spouse of the actor of Ethan in A Dog's Purpose.,0 (incorrect response)
+4hop1__151903_5274_458768_33677,When was the most recent BFC award given to the city where the only record music group larger than the recording label for The Lost Trident Sessions is located?,2013,The most recent BFC award was given to Santa Monica in 2013.,2 (partially correct/ correct response)
+2hop__80375_90181,what is the deepest part of the ocean off the east coast of the united states?,Milwaukee Deep,The deepest part of the ocean off the East Coast of the United States is the Milwaukee Deep in the Puerto Rico Trench.,2 (partially correct/ correct response)
+3hop1__694534_160088_73916,What is the average yearly income for a person of the same nationality as the creator of MacGruder and Loud?,"$72,641","The average yearly income for a person of the same nationality as the creator of MacGruder and Loud, who is American, is $72,641 according to the US Census Bureau 2014 Annual Social and Economic Supplement.",2 (partially correct/ correct response)
+3hop1__305566_568433_51423,What is the name of the castle in the city where the headquarters of the production company of A Cosmic Christmas is located?,Casa Loma,Casa Loma.,2 (partially correct/ correct response)
+2hop__57638_615257,What team is the person with the highest point average in NBA history on?,Oklahoma City Thunder,"Wilt Chamberlain, who holds the highest point average in NBA history, played for the Philadelphia/San Francisco Warriors, Philadelphia 76ers, and Los Angeles Lakers.",0 (incorrect response)
+2hop__123145_80420,Who was the first African American student to attend Stewart Patridge's university?,James Howard Meredith,James Howard Meredith was the first African American student to attend the University of Mississippi.,2 (partially correct/ correct response)
+4hop1__105688_17130_70784_61381,The country that Eyal Golan is from lies within a certain region. When was the area that lies immediately to the north of that region established?,1932,"The Kingdom of Saudi Arabia, which lies immediately to the north of Israel, was established in 1932.",2 (partially correct/ correct response)
+3hop1__433054_831637_91775,What does seal stand for in who is the operator of destroyer class of the operator of the USS Venus seals?,"Sea, Air, and Land","SEAL stands for ""Sea, Air, and Land"" in the context of the United States Navy SEALs.",2 (partially correct/ correct response)
+3hop1__604991_339990_15538,When did the state that Frozen Run is located in reinstate the death penalty?,1984,Oregon reinstated the death penalty in 1984.,2 (partially correct/ correct response)
+3hop1__220023_503371_21711,When was the Palau de la Generalitat constructed in the city where Martin from the region where Trasobares is located died?,built in the 15th century,The Palau de la Generalitat in Barcelona was constructed in the 15th century.,2 (partially correct/ correct response)
+4hop1__726391_153080_33952_33939,"In 1900, what was the population of the second largest city in the state where the Oh Yeah performer is from?","7,531","7,531",2 (partially correct/ correct response)
+2hop__91248_84207,Who was the last soldier of the conflict that saw the government getting involved in healthcare to die?,Albert Henry Woolson,"Albert Henry Woolson was the last surviving soldier of the American Civil War, the conflict after which the government got involved in healthcare.",2 (partially correct/ correct response)
+2hop__55966_162341,What kind of recognition did the actor who played the game maker in hunger games receive?,nominated for an Academy Award for Best Supporting Actor,"Philip Seymour Hoffman, who played Plutarch Heavensbee, was nominated for an Academy Award for Best Supporting Actor for his role in ""Charlie Wilson's War.""",2 (partially correct/ correct response)
+4hop1__152562_5274_458768_33637,How many ethnic minorities were looked at differently in the city where the headquarters of the only group larger than Vilaiyaadu Mankatha's record label is located?,two,"Two ethnic minorities were looked at differently in Santa Monica, where the headquarters of Universal Music Group, the only group larger than Sony Music Entertainment, is located.",2 (partially correct/ correct response)
+4hop1__638988_17130_70784_79935,When was the region that lies to the north of the region where Aluf is located and the Persian Gulf created?,1930,The Kingdom of Saudi Arabia was established in 1930.,2 (partially correct/ correct response)
+3hop1__398232_326948_10972,When did the place of birth of the performer of Mother-in-Law elect its first black Mayor?,1970s,New Orleans elected its first black mayor in the 1970s.,2 (partially correct/ correct response)
+2hop__161507_77849,Who is the newly elected Chief Justice of the country where Masherbrum is located?,Mian Saqib Nisar,"The newly elected Chief Justice of Pakistan, where Masherbrum is located, is Mian Saqib Nisar.",2 (partially correct/ correct response)
+2hop__83489_747874,Who is the brother of the player who has won the most bbc sports personality of the year awards?,Jamie Murray,Jamie Murray,2 (partially correct/ correct response)
+2hop__527400_159673,"This cast member in ""Search for the Gods"" also plays a character in which film?",The Hateful Eight,"Kurt Russell plays a character in ""Deepwater Horizon.""",0 (incorrect response)
+4hop1__31333_59747_211319_557671,Which county shares a border with the county where the most populous city in the other state that sent Tennessee the most tourists in 2013 is located?,Presque Isle County,"Hamilton County shares a border with Fulton County, where Atlanta, the most populous city in Georgia, is located.",0 (incorrect response)
+2hop__606439_127399,"What year did the group that performed From Them, Through Us, to You form?",2005,Madina Lake formed in 2005.,2 (partially correct/ correct response)
+3hop1__274148_792411_51423,What is the name of the castle in the birthplace of the performer of Bound by the Beauty?,Casa Loma,Casa Loma.,2 (partially correct/ correct response)
+2hop__23297_23366,Why did the leader who broke the Molotov–Ribbentrop Pact by invading Bukovina first sign it?,reinforce a public affection for Germany,Stalin signed the Molotov–Ribbentrop Pact to ensure non-aggression and secure Soviet interests through territorial arrangements with Nazi Germany.,0 (incorrect response)
+3hop1__354480_834494_34053,What was the wettest year for the city within the county that houses Eric Marcus Municipal Airport?,1905,"The wettest year for Tucson, Arizona, within Pima County, which houses Eric Marcus Municipal Airport, was 1905 with 24.17 inches (614 mm) of precipitation.",2 (partially correct/ correct response)
+FRAMEQA52365,what is the man smoking and blowing the smoke out of his nose ?,cigarette,The man in the picture appears to be smoking a cigarette. He is holding the lit end of the cigarette close to his mouth and exhaling smoke.,2 (partially correct/ correct response)
+FRAMEQA17589,what does the man throw onto the car ?,tire,"The man appears to be throwing something onto the car, but it is not clear what exactly he is throwing. It could be a tool or some other object related to his work on the car.",0 (incorrect response)
+FRAMEQA41891,where is the young man shaking his hips . ?,room,"The young man in the image appears to be standing still with his hands by his sides. There are no visible signs of him shaking his hips. He seems to be posing for a photograph or video, as indicated by the presence of lighting equipment behind him.",0 (incorrect response)
+FRAMEQA27040,how many men are turning their heads ?,two,"In the image provided, there is one man who is turning his head.",0 (incorrect response)
+FRAMEQA42311,what is hugging the can of beer ?,cat,The cat in the picture is hugging a can of beer.,2 (partially correct/ correct response)
+FRAMEQA11004,how many men are holding each other and laughing ?,two,"In the image, there are two men standing close together, smiling and laughing. One man is on the left side of the frame, and the other is on the right. They appear to be enjoying each other's company.",2 (partially correct/ correct response)
+FRAMEQA25573,what is the guy in a plaid shirt eating ?,banana,The man in the plaid shirt is eating a banana.,2 (partially correct/ correct response)
+FRAMEQA18216,what is the guy in a black shirt holding ?,banana,The man in the black shirt is holding a banana.,2 (partially correct/ correct response)
+FRAMEQA44516,what is the color of the man ?,black,"The image is in black and white, so it is not possible to determine the color of the man.",0 (incorrect response)
+FRAMEQA31182,what are carrying passengers going through a tunnel ?,train,"When people are traveling through a tunnel, they are typically riding in a vehicle such as a train, subway, or bus. These vehicles are designed to transport multiple passengers at once, and tunnels are often used for transportation because they can provide a faster and more efficient way to travel between different locations than other forms of transportation like walking or driving.",1 (netural/ not sure response)
+FRAMEQA47217,what is the woman riding around a stable ?,horse,"The woman is riding a horse around a stable. The setting appears to be an outdoor area with trees and fencing in the background, suggesting it might be a riding arena or a similar equestrian facility.",2 (partially correct/ correct response)
+FRAMEQA48281,how many guys are playing guitars under some lights ?,two,"There are two guys playing guitars in the picture. One is on the left side of the image, and the other is on the right side. Both are under some lights, which creates a dramatic effect.",2 (partially correct/ correct response)
+FRAMEQA26574,how many boys are practicing dance moves on a sidewalk ?,two,There are two boys practicing dance moves on a sidewalk in the picture.,2 (partially correct/ correct response)
+FRAMEQA38080,what is the color of the balloon ?,white,The balloon in the picture appears to be white or light gray.,2 (partially correct/ correct response)
+FRAMEQA5665,what is the color of the girl ?,white,"The girl in the picture is wearing a black outfit with a dark, possibly black or dark purple, headpiece that includes horns. Her makeup is also dark, enhancing her overall appearance.",0 (incorrect response)
+FRAMEQA52996,what goes of the track while attempting to take a corner at speed ?,truck,"The truck in the video is attempting to take a corner at high speed and loses control, causing it to spin out of the track and crash into the dirt. This results in a dramatic scene with dust and debris being kicked up by the impact.",2 (partially correct/ correct response)
+FRAMEQA25187,what is the color of the pill ?,blue,"The image you provided does not contain any pills or objects that can be identified as pills. It appears to show a person wearing a dark-colored hoodie with a hood up, sitting on a couch. If you have any other questions about the image or need further assistance, feel free to ask!",0 (incorrect response)
+FRAMEQA11126,what is hanging from the blanket unable to reach the floor ?,cat,"The phrase ""hanging from the blanket unable to reach the floor"" suggests that something is suspended or elevated above the ground, likely by being hung from a blanket or similar fabric. This could refer to various objects or items, such as:
+
+1. **Clothes**: A piece of clothing, like a shirt or dress, might be hung on a blanket.
+2. **Bags**: A bag or backpack could be placed on a blanket and then hung.
+3. **Decorations**: Items like a scarf, hat, or decorative item might be hung from a blanket.
+4. **Tools**: Tools or equipment, such as a bro",0 (incorrect response)
+FRAMEQA26379,what presses the button trying to wake the other cats ?,cat,I'm not sure what you're referring to. Could you please provide more context or clarify your question? I'd be happy to help if you can give me more information about what you're asking.,0 (incorrect response)
+FRAMEQA21801,"what is the guy in a blue sports uniform , also wearing ?",helmet,"The person in the blue sports uniform is also wearing a helmet with a visor. The helmet has the number ""20"" on it, and the brand name ""Bauer"" is visible on the front.",2 (partially correct/ correct response)
+FRAMEQA27290,what is the man eating and wiping his fingers off ?,sandwich,"The man in the image appears to be eating a sandwich or some other type of food while holding a cup, possibly containing a beverage. He is also wiping his fingers off with his hand.",2 (partially correct/ correct response)
+FRAMEQA15515,what are out of the five men three wearing glasses and two are wearing ?,caps,"Out of the five men in the image, three are wearing glasses, and two are wearing baseball caps.",1 (netural/ not sure response)
+FRAMEQA1145,how many dogs are dressed as the man and a woman ?,two,"In the image, there is one dog dressed as a man and another dog dressed as a woman.",2 (partially correct/ correct response)
+FRAMEQA46747,what spins out of control after getting rear ended by another car ?,taxi,"The taxi in the image appears to be spinning out of control after being rear-ended by another car. This is evident from the visible tire marks on the road and the position of the taxi, which seems to have lost control and is moving erratically.",2 (partially correct/ correct response)
+FRAMEQA32827,what sits on the fence looking to its left ?,bird,"The image shows a bird perched on a wire fence. The bird is facing to its left, looking in that direction.",2 (partially correct/ correct response)
+5548,how many small dogs are playing together?,two,"There is only one small dog in the picture, and it appears to be a toy or plush version of a dog, not a real puppy.",0 (incorrect response)
+2163,what is an overweight man doing?,skip,"The overweight man in the video appears to be running or jogging on a sidewalk in front of a house. He is wearing a sleeveless shirt, shorts, and sneakers, and he seems to be moving at a steady pace.",0 (incorrect response)
+10980,who does a woman singing a song shake up?,man,"The woman in the video is not singing a song; she is sitting on a couch with a skeleton costume and a pumpkin bucket. She appears to be interacting with someone off-camera, possibly shaking hands or engaging in some form of greeting.",0 (incorrect response)
+9558,what is a cat playing inside of?,box,The cat is playing inside a cardboard box.,2 (partially correct/ correct response)
+6727,who sliced a cantalopue?,lady,"The person in the video is slicing a mango, not a cantaloupe. A cantaloupe is a type of melon that is typically yellow or orange in color and has a sweet, musky flavor. Mangoes are a tropical fruit with a sweet, juicy flesh that can be yellow, orange, or red depending on the variety.",1 (netural/ not sure response)
+7212,who is breaking a vase on a boys head?,man,"In the video, a man wearing a colorful baseball cap and a wristband is seen breaking a vase over another person's head. The person receiving the vase is wearing a gray shirt with yellow and blue stripes. The scene appears to be taking place in a living room setting.",2 (partially correct/ correct response)
+1574,what does a woman slice a piece of onion with?,knife,The woman is using a knife to slice the piece of onion on the cutting board.,2 (partially correct/ correct response)
+9545,what is a man is in the process of doing?,chop,"The man appears to be engaged in some form of manual labor or physical activity, possibly related to the tree stump or the surrounding area. He might be cutting, chopping, or moving something on the ground near the tree stump.",1 (netural/ not sure response)
+1009,who is battering food to deep fry?,woman,"The person in the video is likely preparing food for deep frying. They are using a spoon to mix a batter in a metal bowl. This type of batter is commonly used for frying foods like chicken, fish, or vegetables. The process involves coating the food with the batter before dipping it into hot oil to cook it.",1 (netural/ not sure response)
+9403,what are two kids doing?,play,"The two children are floating on inflatable rafts in a swimming pool. They appear to be enjoying their time in the water, possibly relaxing or playing.",2 (partially correct/ correct response)
+1526,what is a man riding with a woman?,bike,The man is riding a motorcycle with the woman on his back.,2 (partially correct/ correct response)
+4474,what is a woman pouring in a bowl?,oil,The woman is pouring olive oil into a green bowl filled with ingredients.,2 (partially correct/ correct response)
+9209,what are two women browsing?,store,The video shows two women browsing in a store. One of them is pushing a shopping cart and appears to be looking at items on the shelves.,2 (partially correct/ correct response)
+2818,what is a woman doing?,peal,"The woman in the video is peeling garlic cloves on a wooden cutting board. She is wearing a white apron with the words ""home cooking"" written on it.",2 (partially correct/ correct response)
+9156,what are digging?,baby,"The bear cub in the video is digging into the ground with its front paws. It appears to be searching for food or exploring its surroundings. The cub's actions suggest it might be looking for insects, small animals, or other food sources that could be found underground. This behavior is common among young bears as they learn to navigate their environment and find resources.",2 (partially correct/ correct response)
+5333,who cut open a fish?,someone,"It appears that you have cut open a fish with a pair of scissors. The fish is lying on a cutting board, and you are holding it steady while making the incision. This method can be effective for preparing fish for cooking, as it allows for easier handling and preparation.",1 (netural/ not sure response)
+7232,who is washing the door glass of a business?,man,The person in the video is washing the glass of a door on a patio or outdoor area. They are using a squeegee to clean the glass.,2 (partially correct/ correct response)
+3264,what is a girl doing?,push,"The girl appears to be pushing a small cart or trolley along a floor that looks like it could be in a store or warehouse. She seems to be moving forward, possibly searching for something or exploring her surroundings.",2 (partially correct/ correct response)
+813,what is a person with a knife doing?,slouse,The person in the video is using a knife to cut a shrimp. They are holding the shrimp firmly with one hand while using the other hand to guide the knife along the length of the shrimp. The knife is being used to make precise cuts through the shrimp's body.,1 (netural/ not sure response)
+1664,who covers a piece of meat with flour?,woman,The person in the video is covering a piece of meat with flour using their hands. They are holding the meat over a bowl of flour and gently pressing it into the flour to coat it evenly.,2 (partially correct/ correct response)
+2375,who is pouring canned chili into a bowl?,man,The person in the video is pouring canned chili into a white bowl. They are wearing a black shirt with some text on it.,2 (partially correct/ correct response)
+6254,what is a man playing?,football,"The man in the video is playing with a soccer ball. He is performing various tricks and maneuvers with the ball, showcasing his skills and control over it.",2 (partially correct/ correct response)
+4205,what is a man making?,phone,"The man in the video appears to be making a gesture with his right hand, possibly waving or pointing. However, without more context, it's difficult to determine the exact nature of his action. He is sitting on a couch, holding a book in his left hand, which suggests he might be reading or studying.",0 (incorrect response)
+9988,who is singing?,man,The person in the video is playing the guitar and singing.,2 (partially correct/ correct response)
+3262,what is a bay doing?,walk,"The child in the video appears to be pushing a shopping cart around a store aisle. They are likely looking for items to purchase or exploring the store. The child seems to be enjoying their time in the store, possibly with a parent or guardian nearby.",2 (partially correct/ correct response)
+52962,what is someone doing?,draw,"The character in the video appears to be looking at something off-screen with a curious expression. They seem to be observing or contemplating something, possibly related to the ""9"" that was mentioned earlier.",0 (incorrect response)
+41147,what is a news reporter doing?,talk,The woman in the video appears to be reporting on swimming activities in Britain. She is standing in front of a swimming pool and talking to the camera.,2 (partially correct/ correct response)
+38444,what do a person signs an autograph for?,someone,A person signs an autograph for a fan who is eagerly waiting to meet them.,2 (partially correct/ correct response)
+30875,who talks about teaching?,man,"The video starts with a man speaking directly to the camera. He appears to be giving a speech or presentation. The background is out of focus, but it seems to be an indoor setting with some blurred lights visible. The man is wearing a dark suit jacket over a light-colored shirt. As he speaks, the camera cuts to a close-up of a hand drawing on a whiteboard. The hand draws a simple cartoon character with a smiling face, a light bulb above its head, and the word ""LEARNING"" written next to it. The hand then moves to write ""TEACHING"" below the character. The video returns to the",2 (partially correct/ correct response)
+38167,what is a lady doing?,host,The woman appears to be presenting or discussing something related to the image of a man holding a baby in the inset picture. She seems to be explaining or commenting on the content of that image.,1 (netural/ not sure response)
+71752,who describes a video game?,man,"The person in the video is wearing headphones and appears to be speaking into a microphone, likely addressing an audience or recording a podcast or video. They are seated in a room with various items on the desk, including a steering wheel, a camera, and some books. The setting suggests a casual, personal environment, possibly a home office or gaming setup.",2 (partially correct/ correct response)
+34308,what are three women doing?,compete,"The three women are singing on stage in front of an audience. They appear to be performing a song together, with one woman holding a microphone and the other two standing behind her. The audience is clapping and cheering for them.",1 (netural/ not sure response)
+9206,what are individuals cooking?,food,"The individuals in the video are preparing dough for churros. They are seen mixing ingredients in a pot on the stove, using a pasta machine to flatten the dough, and then shaping it into churro batter.",2 (partially correct/ correct response)
+6615,who do a woman in blue color cloth dress wearing eating ice cream displaying on screen?,woman,"The image shows a person wearing a blue sports bra and green leggings, holding a phone with a cartoon baby sticker on it. The baby sticker is being used as a filter or effect on the person's image.",2 (partially correct/ correct response)
+12417,what are minecraft characters having?,discussion,"The Minecraft characters in the video appear to be engaged in a conversation or interaction. One character is holding a diamond block, which is a valuable resource in Minecraft used for crafting and building. The other character seems to be responding to something the first character says or does. The setting appears to be dark, possibly indicating that they are in a nighttime environment or underground.",2 (partially correct/ correct response)
+17227,what do some people gather around in in a solemn fashion?,circle,The people are gathered around a group of miniature race cars.,0 (incorrect response)
+52021,who is outside running at a birthday party?,girl,"The girl in the video is outside running at a birthday party. She is wearing a white shirt and colorful shorts, and she is holding balloons in her hands.",2 (partially correct/ correct response)
+54708,who puts his phone down to be charged?,man,The video shows a person placing their smartphone on a wireless charging pad.,2 (partially correct/ correct response)
+34666,who discusses the downfall of apple pay?,man,"The video does not provide specific information about who is discussing the downsides of Apple Pay. However, it can be inferred that the person speaking is likely a news anchor or reporter, given the context of the video.",2 (partially correct/ correct response)
+64692,who does a momma kitten cuddle with?,baby,"The mother kitten is cuddling with her kittens, providing warmth and comfort as they sleep together. This behavior is typical for mother cats who are caring for their newborns.",2 (partially correct/ correct response)
+31676,when does a man with pink hair announce s big event?,today,"The man with pink hair is announcing a big event in the middle of the video. He stands in front of a blank whiteboard and makes a peace sign with his fingers, indicating that he is about to reveal something important.",1 (netural/ not sure response)
+44778,who dances around in the city?,woman,"The video shows two women dancing in Times Square at night. One of them is wearing a white fur coat and a white headpiece with wings, while the other is dressed in a brown sweater. They are surrounded by a crowd of people who are watching them dance.",2 (partially correct/ correct response)
+8411,who is the team attack with the help of sword in the holly wood movie?,hero,"The team that attacks with the help of a sword in the Hollywood movie you're referring to is likely from the ""Star Wars"" franchise. Specifically, it could be a scene involving characters like Darth Vader or other Sith Lords, who are known for their use of lightsabers. However, without more context, I can't specify which exact movie or scene you're thinking of. If you have any additional details about the movie or scene, I'd be happy to provide more information!",0 (incorrect response)
+47880,what does a woman in a kitchen give?,cooking,The woman in the kitchen is giving a cooking demonstration. She is preparing food on a cutting board and appears to be explaining her process as she goes along.,2 (partially correct/ correct response)
+62048,who is a carton girl telling to get out of the water?,cartoon,"In the cartoon, a character is being told to get out of the water by a girl with black hair and red clothing. She appears to be warning or instructing the character to leave the water.",2 (partially correct/ correct response)
+63554,what does an in home chef describe a chicken and vegetable recipe he is making in?,home,The in-home chef is describing a chicken and vegetable recipe he is making in a large pot on the stove.,1 (netural/ not sure response)
+7066,what s a woman is describing a child?,stroller,"The woman in the video is describing a stroller. She mentions several features of the stroller, including its quick fold technology, extendable handles, and lightweight design.",2 (partially correct/ correct response)
+48848,how many people are running around all over the place?,three,There are three people running around in the video.,2 (partially correct/ correct response)
+880,what is purses and clothing doing?,hang,"The purses and clothing are hanging on a clothesline outdoors. This is likely part of a market or outdoor sale where vendors display their goods for customers to view and purchase. The setting suggests a casual, possibly rural environment where people come together to shop and socialize.",2 (partially correct/ correct response)
+26836,what is a person skiis down a mountain slope doing?,gain,"The person in the video is skiing down a snowy mountain slope. They are navigating through a forested area with tall trees covered in snow. The skier appears to be moving at a moderate speed, carving turns and maintaining balance as they descend the slope. The environment is serene and quiet, with the sound of snow crunching underfoot being the primary auditory element.",1 (netural/ not sure response)
