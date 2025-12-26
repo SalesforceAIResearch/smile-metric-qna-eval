@@ -5,19 +5,43 @@ import nltk
 import re
 import os
 import random
+import time
 from tqdm import tqdm
 import sys
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Download essential nltk vocabulary & tagger
-nltk.download('averaged_perceptron_tagger_eng')
-nltk.download('stopwords')
-nltk.download('wordnet')
+# Download essential nltk vocabulary & tagger (quiet=True to avoid race conditions in parallel runs)
+try:
+    nltk.download('averaged_perceptron_tagger_eng', quiet=True)
+    nltk.download('stopwords', quiet=True)
+    nltk.download('wordnet', quiet=True)
+except FileExistsError:
+    pass  # Another process already downloaded it
 
 class SMILE:
-    def __init__(self, emb_model:str, eval_metrics:list, avg_w1=0.5, avg_w2=0.5, hm_w1=0.5, hm_w2=0.5, assign_bins=False, use_exact_matching=False, save_emb_folder=None, load_emb_folder=None, syn_ans_model=None, verbose=True):
+    def __init__(self, emb_model:str, eval_metrics:list, avg_w1=0.5, avg_w2=0.5, hm_w1=0.5, hm_w2=0.5, assign_bins=False, use_exact_matching=False, remove_punctuation=True, save_emb_folder=None, load_emb_folder=None, syn_ans_model=None, verbose=True):
+        """
+        Initialize SMILE metric.
+        
+        Parameters:
+            emb_model (str): Name of the embedding model to use.
+            eval_metrics (list): List of evaluation metrics to compute ('avg', 'hm', 'wt avg', 'wt hm').
+            avg_w1 (float): Weight for sentence score in weighted average.
+            avg_w2 (float): Weight for keyword score in weighted average.
+            hm_w1 (float): Weight for sentence score in weighted harmonic mean.
+            hm_w2 (float): Weight for keyword score in weighted harmonic mean.
+            assign_bins (bool): Whether to assign scores to bins (0-5).
+            use_exact_matching (bool): Whether to use exact matching component.
+            remove_punctuation (bool): Whether to remove punctuation during keyword processing.
+                Set to False for fine-grained numerical evaluation (e.g., 1.2cm vs 1.3cm).
+                Default is True for backward compatibility.
+            save_emb_folder (str): Folder path to save embeddings.
+            load_emb_folder (str): Folder path to load embeddings from.
+            syn_ans_model (str): Name of the synthetic answer model.
+            verbose (bool): Whether to print progress messages.
+        """
         if torch.cuda.is_available():
             ## Uncomment the code below to randomly assign a gpu to use
             # cuda_visible_device = os.environ.get("CUDA_VISIBLE_DEVICES", "0")
@@ -31,10 +55,18 @@ class SMILE:
         self.stopwords = set(stopwords.words('english'))
         self.lemmatizer = WordNetLemmatizer()
         self.eval_metrics = eval_metrics
+        
+        # Sanity check: weights must sum to 1
+        if not np.isclose(avg_w1 + avg_w2, 1.0):
+            raise ValueError(f"avg_w1 ({avg_w1}) + avg_w2 ({avg_w2}) must equal 1.0, got {avg_w1 + avg_w2}")
+        if not np.isclose(hm_w1 + hm_w2, 1.0):
+            raise ValueError(f"hm_w1 ({hm_w1}) + hm_w2 ({hm_w2}) must equal 1.0, got {hm_w1 + hm_w2}")
+        
         self.avg_w1, self.avg_w2 = avg_w1, avg_w2
         self.hm_w1, self.hm_w2 = hm_w1, hm_w2
         self.assign_bins = assign_bins
         self.use_exact_matching = use_exact_matching
+        self.remove_punctuation = remove_punctuation
         self.save_emb_folder = save_emb_folder
         self.load_emb_folder = load_emb_folder
         self.verbose = verbose
@@ -88,7 +120,7 @@ class SMILE:
         
     def _process_kwds(self, kwd:str):
         """
-        Preprocesses a keyword string by lowercasing, removing punctuation, and lemmatizing each word.
+        Preprocesses a keyword string by lowercasing, optionally removing punctuation, and lemmatizing each word.
 
         Parameters:
             kwd (str): The keyword or phrase to process.
@@ -97,10 +129,28 @@ class SMILE:
             tuple: A tuple containing:
                 - post_kwd (str): The processed keyword string.
                 - len_kwd (int): The number of words in the processed keyword.
+        
+        Note:
+            If remove_punctuation=False, decimal points and other punctuation are preserved.
+            This is useful for fine-grained numerical evaluation (e.g., 1.2cm vs 1.3cm).
         """
-        post_kwd = kwd.lower()
-        # remove any punctuations as it is not useful for embeddings
-        post_kwd = re.sub(r'[^\w\s]', '', post_kwd)
+        post_kwd = kwd.lower().strip()
+        
+        # Always remove trailing sentence-ending punctuation regardless of remove_punctuation flag
+        # This handles: periods, exclamation marks, question marks, and their combinations
+        # This is different from decimal points within numbers (e.g., "1.2")
+        post_kwd = re.sub(r'[.!?]+$', '', post_kwd)
+        
+        # Optionally remove punctuation (controlled by self.remove_punctuation)
+        if self.remove_punctuation:
+            # Remove all punctuation - default behavior for backward compatibility
+            post_kwd = re.sub(r'[^\w\s]', '', post_kwd)
+        else:
+            # Preserve decimals and certain punctuation for fine-grained evaluation
+            # Only remove punctuation that doesn't affect numerical meaning
+            # Keep: . (decimals), - (negatives), / (fractions)
+            post_kwd = re.sub(r'[^\w\s.\-/]', '', post_kwd)
+        
         # Uncomment below to filter based on stop words
         # post_kwd = ' '.join([self.lemmatizer.lemmatize(word, self._get_pos_tag(word)) for word in post_kwd.split() if word not in self.stopwords])
         post_kwd = ' '.join([self.lemmatizer.lemmatize(word, self._get_pos_tag(word)) for word in post_kwd.split()])
@@ -200,13 +250,18 @@ class SMILE:
 
         if not self.load_emb_folder:
             if self.verbose: print(" > Generating sentence embeddings...")
+            sent_emb_start_time = time.time()
             embs = self.emb_model.encode(string_ans_preds, batch_size=32, device=self.device, show_progress_bar=True if self.verbose else False)
+            sent_emb_time = time.time() - sent_emb_start_time
+            if self.verbose: print(f"   > Sentence embedding time: {time.strftime('%H:%M:%S', time.gmtime(sent_emb_time))}")
             # Extract the synthetic answers and pred embeddigns
             ans_embs = embs[::2]
             pred_embs = embs[1::2]
 
             # Generates embeddings for 'actual ground-truth'
             kwd_ans_embs = self.emb_model.encode(proc_ans.tolist(), batch_size=32, device=self.device, show_progress_bar=True if self.verbose else False)
+            kwd_ans_emb_time = time.time() - sent_emb_start_time
+            if self.verbose: print(f"   > kwd ans embedding time: {time.strftime('%H:%M:%S', time.gmtime(kwd_ans_emb_time))}")
             if self.save_emb_folder:
                 # Save syn_ans_emb scores, pred_sent_emb scores & ans_kwd_emb
                 if self.verbose: print(f'  > Saving synthetic answer embeddings at -> {self.SAVE_EMB_PATHS["syn_ans_emb"]}')
@@ -222,6 +277,7 @@ class SMILE:
         else:
             try:
                 # Loads the precomputed embeddings
+                sent_emb_start_time = time.time()
                 if self.verbose: print(" > Loading syn_ans_embs & ans_kwd_embs")
                 if os.path.exists(self.SAVE_EMB_PATHS['syn_ans_emb']):
                     ans_embs = np.load(self.SAVE_EMB_PATHS["syn_ans_emb"])
@@ -250,6 +306,9 @@ class SMILE:
                     if self.verbose: print("  > Loading pred_sent_embs & pred_kwd_embs")
                     pred_embs = np.load(self.SAVE_EMB_PATHS["pred_sent_emb"])
                     pred_kwd_embs = np.load(self.SAVE_EMB_PATHS["pred_kwd_emb"])
+                
+                emb_time = time.time() - sent_emb_start_time
+                if self.verbose: print(f"   > embedding time (load [sent/ kwd]): {time.strftime('%H:%M:%S', time.gmtime(emb_time))}")
 
             except Exception as e:
                 if self.verbose: print(f'_generate_emb_scores(), embs/ kwd_ans_embs : {e}')
@@ -263,9 +322,12 @@ class SMILE:
         kwd_scores = [] # contains [(kwd_score, word i.e. matched),....]
         save_kwd_embs = []
         if self.verbose: print(' > Generating kwd_emb_scores...')
+        kwd_emb_start_time = time.time()
 
         # Generating kwd_emb_scores & max_sim_words
         kwd_scores, save_kwd_embs = self._get_kwd_score(kwd_ans_embs, len_ans, proc_preds, pred_kwd_embs)
+        kwd_emb_time = time.time() - kwd_emb_start_time
+        if self.verbose: print(f"   > Keyword embedding score time: {time.strftime('%H:%M:%S', time.gmtime(kwd_emb_time))}")
 
         # save the pred_kwd_emb
         if self.save_emb_folder or (self.load_emb_folder and not os.listdir(self.load_emb_folder)):
